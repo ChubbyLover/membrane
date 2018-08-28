@@ -1,0 +1,115 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Osemosys Membrane 0.0.1</title>
+</head>
+<body>
+<h1>Create Model</h1>
+
+<fieldset>
+  <h2>Model Details</h2>
+  <table id="model-details">
+    <tr>
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" name="name" id="name"></td>
+    </tr>
+    <tr>
+      <td><label for="description">Description:</label></td>
+      <td><textarea type="text" name="description" id="description"></textarea></td>
+    </tr>
+    <tr>
+      <td><label>Year Range:</label></td>
+      <td>
+        <label for="yearstart">Start:</label>
+        <input type="number" name="yearstart" id="yearstart">
+        <label for="yearend">End:</label>
+        <input type="number" name="yearend" id="yearend">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="currency">Currency:</label></td>
+      <td><input type="text" name="currency" id="currency"></td>
+    </tr>
+    <tr>
+      <td><label for="discount-rate">Discount Rate:</label></td>
+      <td><input type="number" name="discount-rate" id="discount-rate"></td>
+    </tr>
+    <tr>
+      <td><label for="depreciation-method">Depreciation Method:</label></td>
+      <td><input type="number" name="depreciation-method" id="depreciation-method"></td>
+    </tr>
+
+  </table>
+</fieldset>
+
+<fieldset>
+  <h2>Time Slices</h2>
+
+  <h3>Seasons</h3>
+  <i>Enter Season like Summer, Winter,...</i><br>
+  <table id="seasons">
+    <tr>
+      <th>Name:</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="name" class="trigger-time-slice-calculation" placeholder="e.g. Summer">
+      </td>
+    </tr>
+  </table>
+  <button onClick="addSeason()">+</button>
+
+  <h3>Daytypes</h3>
+  <i>Enter Daytypes and the number of days in each daytype</i><br>
+  <table id="daytypes">
+    <tr>
+      <th>Name:</th>
+      <th># Days</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="name" class="trigger-time-slice-calculation" placeholder="e.g. Weekday">
+      </td>
+      <td>
+        <input type="number" name="number-of-days" class="trigger-time-slice-calculation" placeholder="5">
+      </td>
+    </tr>
+  </table>
+  <button onClick="addDayType()">+</button>
+
+
+  <h3>Daily Time Brackets</h3>
+  <i>Enter Daily Time Brackets and the hours in each bracket</i><br>
+  <table id="timebrackets">
+    <tr>
+      <th>Name:</th>
+      <th># Hours</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="name" class="trigger-time-slice-calculation" placeholder="e.g. Day">
+      </td>
+      <td>
+        <input type="number" name="number-of-hours" class="trigger-time-slice-calculation" placeholder="12">
+      </td>
+    </tr>
+  </table>
+  <button onClick="addTimeBracket()">+</button>
+
+  <h3>Timeslices</h3>
+  <i>Tmeslices are automatically calculated from your inputs above</i><br>
+  <table id="timeslices">
+    <tr>
+      <th>Name:</th>
+      <th># Share</th>
+    </tr>
+  </table>
+
+</fieldset>
+
+<button id="submit" onClick="saveModel()">Save</button>
+
+<script src="js/model_create_edit.js"></script>
+
+</body>
+</html>
